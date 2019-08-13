@@ -1,0 +1,25 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'glauber.deeplearning'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    maven { url "https://artifacts.alfresco.com/nexus/content/repositories/public/" }
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    //implementation 'com.googlecode.javacv:javacv:0.1'
+    //implementation 'com.googlecode.javacpp:javacpp:0.7'
+    implementation 'org.bytedeco:opencv-platform:4.1.0-1.5.1'
+    implementation 'org.bytedeco:javacv-platform:1.5.1'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
