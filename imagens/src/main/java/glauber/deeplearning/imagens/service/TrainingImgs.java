@@ -12,7 +12,7 @@ import static org.bytedeco.opencv.global.opencv_core.*;
 import static org.bytedeco.opencv.global.opencv_core.cvSet2D;
 import static org.bytedeco.opencv.helper.opencv_imgcodecs.cvLoadImage;
 
-public class LogicImages {
+public class TrainingImgs {
     public void execute(){
         String exportacao = "@relation caracteristicas\n\n";
         exportacao = exportacao + "@attribute laranja_camisa_bart real\n";
