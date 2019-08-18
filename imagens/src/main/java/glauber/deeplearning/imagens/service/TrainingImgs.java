@@ -3,6 +3,7 @@ package glauber.deeplearning.imagens.service;
 import org.bytedeco.opencv.opencv_core.CvMat;
 import org.bytedeco.opencv.opencv_core.CvScalar;
 import org.bytedeco.opencv.opencv_core.IplImage;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -12,6 +13,7 @@ import static org.bytedeco.opencv.global.opencv_core.*;
 import static org.bytedeco.opencv.global.opencv_core.cvSet2D;
 import static org.bytedeco.opencv.helper.opencv_imgcodecs.cvLoadImage;
 
+@Service
 public class TrainingImgs {
     public void execute(){
         String exportacao = "@relation caracteristicas\n\n";

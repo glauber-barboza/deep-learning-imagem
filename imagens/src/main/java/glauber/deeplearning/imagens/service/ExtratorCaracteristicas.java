@@ -3,13 +3,18 @@ package glauber.deeplearning.imagens.service;
 import glauber.deeplearning.imagens.dto.Caracteristicas;
 import org.bytedeco.opencv.opencv_core.CvScalar;
 import org.bytedeco.opencv.opencv_core.IplImage;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
 
 import static org.bytedeco.opencv.global.opencv_core.cvGet2D;
 import static org.bytedeco.opencv.helper.opencv_imgcodecs.cvLoadImage;
 
+@Service
 public class ExtratorCaracteristicas {
-    
-    public Caracteristicas extrairCaracteristicas(String image) {
+
+    public Caracteristicas extrairCaracteristicas(File file, MultipartFile multipartFile) {
         float laranjaCamisaBart = 0.0F;
         float azulCalcaoBart = 0.0F;
         float azulSapatoBart = 0.0F;
@@ -18,7 +23,9 @@ public class ExtratorCaracteristicas {
         float cinzaSapatoHomer = 0.0F;
         double red, green, blue;
         float[] caracteristicas = new float[6];
-        IplImage iplImage = cvLoadImage(image);
+
+        //OBS, não funciona em modo debbug
+        IplImage iplImage = cvLoadImage(file.getAbsolutePath());
 
         for (int altura = 0; altura < iplImage.height(); ++altura) {
             for (int largura = 0; largura < iplImage.width(); ++largura) {
