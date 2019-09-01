@@ -4,7 +4,6 @@ import glauber.deeplearning.imagens.dto.Caracteristicas;
 import org.bytedeco.opencv.opencv_core.CvScalar;
 import org.bytedeco.opencv.opencv_core.IplImage;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 
@@ -13,8 +12,7 @@ import static org.bytedeco.opencv.helper.opencv_imgcodecs.cvLoadImage;
 
 @Service
 public class ExtratorCaracteristicas {
-
-    public Caracteristicas extrairCaracteristicas(File file, MultipartFile multipartFile) {
+    public Caracteristicas extrairCaracteristicas(File file) {
         float laranjaCamisaBart = 0.0F;
         float azulCalcaoBart = 0.0F;
         float azulSapatoBart = 0.0F;
@@ -81,6 +79,7 @@ public class ExtratorCaracteristicas {
         carac.setAzulCalcaHomer(azulCalcaHomer);
         carac.setMarromBocaHomer(marromBocaHomer);
         carac.setCinzaSapatoHomer(cinzaSapatoHomer);
+
         return carac;
     }
 
